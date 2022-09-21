@@ -1,0 +1,8 @@
+[
+    {
+        "type": "latency",
+        "path": "/var/lib/postgresql/data/**/*",
+        "percent": 100,
+        "latency": "1s"
+    }
+]

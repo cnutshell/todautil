@@ -1,0 +1,16 @@
+[
+    {
+        "type": "mistake",
+        "path": "/var/test/**/*",
+        "methods": [
+            "READ",
+            "WRITE"
+        ],
+        "mistake": {
+            "filling": "zero",
+            "maxOccurrences": 1,
+            "maxLength": 10000
+        },
+        "percent": 100
+    }
+]
