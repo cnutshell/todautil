@@ -1,0 +1,22 @@
+[
+    {
+        "type": "fault",
+        "path": "/mnt/test/*",
+        "faults": [
+            {
+                "errno": 5,
+                "weight": 10
+            }
+        ],
+        "methods": [
+            "lookup",
+            "getattr",
+            "setattr",
+            "open",
+            "read",
+            "write"
+        ],
+        "percent": 100,
+        "duration": "30s"
+    }
+]

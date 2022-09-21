@@ -19,5 +19,6 @@ Usage of ./todautil:
 NB: Before using `todautil`, `toda` must be available. One could check this via `toda --help`.
 
 ```bash
+./todautil -conf config-examples/latency.json -path /mnt/test/
 ```
 

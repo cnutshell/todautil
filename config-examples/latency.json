@@ -1,0 +1,16 @@
+[
+    {
+        "type": "latency",
+        "path": "/mnt/test/*",
+        "methods": [
+            "lookup",
+            "getattr",
+            "setattr",
+            "open",
+            "read",
+            "write"
+        ],
+        "Latency": "10s",
+        "percent": 100
+    }
+]
