@@ -1,7 +1,7 @@
 [
     {
         "type": "latency",
-        "path": "/mnt/test/*",
+        "path": "/mnt/d/test/*",
         "methods": [
             "lookup",
             "getattr",
@@ -10,7 +10,7 @@
             "read",
             "write"
         ],
-        "Latency": "10s",
+        "Latency": "2s",
         "percent": 100
     }
 ]

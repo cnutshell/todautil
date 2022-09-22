@@ -9,9 +9,9 @@ go build
 ./todautil --help
 Usage of ./todautil:
   -conf string
-        config file
+      config file
   -path string
-        volume path
+      root of mount point
 ```
 
 ## Example
@@ -19,6 +19,6 @@ Usage of ./todautil:
 NB: Before using `todautil`, `toda` must be available. One could check this via `toda --help`.
 
 ```bash
-./todautil -conf config-examples/latency.json -path /mnt/test/
+./todautil -conf config/latency.json -path /mnt/d
 ```
 

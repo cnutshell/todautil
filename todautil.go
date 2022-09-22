@@ -31,7 +31,7 @@ var (
 
 func init() {
 	flag.StringVar(&conf, "conf", "", "config file")
-	flag.StringVar(&path, "path", "", "volume path")
+	flag.StringVar(&path, "path", "", "root of mount point")
 }
 
 func parseFlag() {
@@ -108,7 +108,7 @@ func main() {
 	}
 
 	// build command
-	args := fmt.Sprintf("--path %s --verbose info", path)
+	args := fmt.Sprintf("--path %s --verbose info --mount-only", path)
 	stdlog.Printf("executing cmd: %s %s", todaBin, args)
 
 	processBuilder := bpm.DefaultProcessBuilder(
