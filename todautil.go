@@ -96,7 +96,7 @@ func (pm *processManger) killBackgroundProcess(
 func main() {
 	parseFlag()
 
-	// load configuration
+	// Load configuration
 	actions, err := loadConfig(conf)
 	if err != nil {
 		stdlog.Fatal("Error when load config:", err)
@@ -120,11 +120,11 @@ func main() {
 	cmd := processBuilder.Build(ctx)
 	cmd.Stderr = os.Stderr
 
-	// start toda
+	// Start toda
 	pm := newProcessManger()
 	proc := pm.startProcess(ctx, cmd)
 
-	// constrct jrpc client
+	// Construct jrpc client
 	client, err := jrpc.DialIO(ctx, proc.Pipes.Stdout, proc.Pipes.Stdin)
 	if err != nil {
 		stdlog.Fatal("Error when initialize jrpc client:", err)
@@ -135,7 +135,7 @@ func main() {
 	sc := make(chan os.Signal, 1)
 	signal.Notify(sc, syscall.SIGHUP, syscall.SIGINT, syscall.SIGTERM, syscall.SIGQUIT)
 
-	// enable io faults
+	// Enable io faults
 	var ret string
 	stdlog.Print("Waiting for toda to start")
 	var rpcError error
@@ -145,7 +145,6 @@ func main() {
 	_ = client.CallContext(timeOut, &ret, "update", actions)
 	rpcError = client.CallContext(timeOut, &ret, "get_status", "ping")
 	if rpcError != nil || ret != "ok" {
-		stdlog.Print("Starting toda takes too long or encounter an error")
 		if err := pm.killBackgroundProcess(ctx, proc.Uid); err != nil {
 			stdlog.Print(err, "kill toda")
 		}
