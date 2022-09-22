@@ -22,3 +22,6 @@ NB: Before using `todautil`, `toda` must be available. One could check this via 
 ./todautil -conf config/latency.json -path /mnt/d
 ```
 
+## NOTE
+
+1. `todautil` launches `toda` via `--mount-only` in order to disable `ptrace`.
